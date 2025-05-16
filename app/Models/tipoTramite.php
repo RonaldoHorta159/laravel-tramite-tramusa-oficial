@@ -7,15 +7,19 @@ use Illuminate\Database\Eloquent\Model;
 
 class tipoTramite extends Model
 {
-    use HasFactory;
+    use HasFactory; // Permite usar las factorías de Eloquent para pruebas y seeders
 
+    // Nombre de la tabla asociada a este modelo
     protected $table = 'tipo_tramites';
+    // Indica que no se usan timestamps (created_at, updated_at)
     public $timestamps = false;
 
-    protected $fillable = ['descripcion'];
+    // Campos que se pueden asignar masivamente
+    protected $fillable = ['descripcion']; // Descripción del tipo de trámite
 
     /**
-     * Todos los documentos de este trámite.
+     * Relación: Todos los documentos de este trámite.
+     * Un tipo de trámite puede tener muchos documentos asociados.
      */
     public function documents()
     {

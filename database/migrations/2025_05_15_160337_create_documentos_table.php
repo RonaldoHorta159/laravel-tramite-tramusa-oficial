@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      */
@@ -19,8 +18,7 @@ return new class extends Migration
             //clasificacion del documento
             $table->unsignedBigInteger('tipo_documento_id');
             $table->unsignedBigInteger('tipo_tramite_id');
-            $table->unsignedBigInteger('estado_documento_id')->nullable()->comment('Estado actual(BORRADOR, EN_PROCESO, REVISION, APROBADO, RECHAZADO, ARCHIVADO)');
-            
+
             //estado de flujo y prioridad
             $table->enum('status', [
                 'BORRADOR',
@@ -30,7 +28,7 @@ return new class extends Migration
                 'RECHAZADO',
                 'ARCHIVADO'
             ])->default('BORRADOR')->comment('Estado del flujo del documento');
-            $table->enum('priority',[
+            $table->enum('priority', [
                 'BAJA',
                 'MEDIA',
                 'ALTA'
@@ -51,7 +49,7 @@ return new class extends Migration
             //foreign keys
             $table->foreign('tipo_documento_id')->references('id')->on('tipo_documentos')->onDelete('restrict');
             $table->foreign('tipo_tramite_id')->references('id')->on('tipo_tramites')->onDelete('restrict');
-             
+
         });
     }
 
@@ -63,3 +61,4 @@ return new class extends Migration
         Schema::dropIfExists('documents');
     }
 };
+
