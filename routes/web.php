@@ -9,8 +9,12 @@ use App\Http\Controllers\tipoDoumentController;
 use App\Http\Controllers\RoleController;
 
 
+//no Auth routes
 Route::get('/', [DashboardController::class, 'index']);
 
+
+
+//auth routes
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
     Route::resource('/tipoDocumento', tipoDoumentController::class)->name('index', 'tipoDocumento');

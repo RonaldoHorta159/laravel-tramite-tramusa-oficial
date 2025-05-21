@@ -7,16 +7,8 @@ const page = usePage();
 
 <template>
     <div>
-        <button v-if="page.props.user.permissions.includes('create role')" >Manage rols</button>
-        <button v-if="page.props.user.permissions.includes('create document')" >Manage documents</button>
+        <h1>hola mundo</h1>
     </div>
 </template>
 
-<style>
-button{
-    background-color: green;
-    color: white;
-    padding: 20px;
-    margin: 5px;
-}
-</style>
+

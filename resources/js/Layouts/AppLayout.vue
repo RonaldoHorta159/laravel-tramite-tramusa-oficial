@@ -56,13 +56,13 @@ const logout = () => {
                                 </NavLink>
                             </div>
 
-                             <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex" v-if="page.props.user.permissions.includes('create document')">
+                             <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex" v-if="page.props.user.permissions.includes('create tipo_documento')">
                                 <NavLink :href="route('tipoDocumento')" :active="route().current('tipoDocumento.*')">
                                     Tipos de documentos
                                 </NavLink>
                             </div>
 
-                            <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex" v-if="page.props.user.permissions.includes('create document')">
+                            <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex" v-if="page.props.user.permissions.includes('read document')">
                                 <NavLink :href="route('nuevoDocumento')" :active="route().current('nuevoDocumento.*')">
                                     Emitir documento
                                 </NavLink>
@@ -208,6 +208,16 @@ const logout = () => {
                     <div class="pt-2 pb-3 space-y-1">
                         <ResponsiveNavLink :href="route('dashboard')" :active="route().current('dashboard')">
                             Dashboard
+                        </ResponsiveNavLink>
+                    </div>
+                    <div class="pt-2 pb-3 space-y-1">
+                        <ResponsiveNavLink :href="route('tipoDocumento')" :active="route().current('tipoDocumento.*')">
+                            Tipos de documentos
+                        </ResponsiveNavLink>
+                    </div>
+                    <div class="pt-2 pb-3 space-y-1">
+                        <ResponsiveNavLink :href="route('dashboard')" :active="route().current('dashboard')">
+                            Emitir documento
                         </ResponsiveNavLink>
                     </div>
 

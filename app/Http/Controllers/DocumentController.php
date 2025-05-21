@@ -11,7 +11,7 @@ class DocumentController extends Controller
      */
     public function index()
     {
-        return "hello wordl";
+        return "Emitir documento";
     }
 
     /**

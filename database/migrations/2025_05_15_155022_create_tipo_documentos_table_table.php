@@ -12,7 +12,6 @@ return new class extends Migration {
     {
         Schema::create('tipo_documentos', function (Blueprint $table) {
             $table->id();
-
             //desxcripcion del tipo de documento
             $table->text('descripcion')->comment('Descripcion del tipo de documento');
             $table->timestamps();

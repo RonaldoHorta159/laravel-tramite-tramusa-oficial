@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\tipoDocumento;
+use Intertia\Response;
 
 class tipoDoumentController extends Controller
 {
@@ -13,8 +14,10 @@ class tipoDoumentController extends Controller
     public function index()
     {
         //
-        $tipoDocumento = tipoDocumento::all();
-        return response()->json($tipoDocumento);
+        $tipoDocumentos = tipoDocumento::paginate(5);
+        return Inertia('tipoDocumento/index', [
+      'tipoDocumentos' => $tipoDocumentos
+    ]);
     }
 
     /**
@@ -30,7 +33,7 @@ class tipoDoumentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return $request;
     }
 
     /**
